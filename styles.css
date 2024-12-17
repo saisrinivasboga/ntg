@@ -1,0 +1,93 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to bottom, #ff9a9e, #fad0c4);
+    color: white;
+    text-align: center;
+    overflow-x: hidden;
+}
+
+h1 {
+    margin-top: 20px;
+    font-size: 4rem;
+    text-shadow: 0 0 10px #ff6f61, 0 0 20px #e64e40;
+    animation: glow 1.5s infinite alternate;
+}
+
+.content-container {
+    display: flex;
+    flex-direction: row; /* Default: side by side for large screens */
+    justify-content: space-between;
+    padding: 20px;
+    margin-top: 40px;
+    gap: 20px;
+}
+
+.image-container, .cake-container, .video-container {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 100%; /* Ensure full width for all elements */
+    height: auto;
+}
+
+.image {
+    max-width: 80%;
+    height: 300px;
+    object-fit: cover;
+}
+
+.cake {
+    max-width: 100%;
+    height: auto;
+    max-height: 300px;
+}
+
+.video-container video {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+}
+
+#canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: -1;
+}
+
+/* Mobile-Specific Styles (Small Screens) */
+@media (max-width: 768px) {
+    .content-container {
+        flex-direction: column; /* Stack elements vertically */
+        align-items: center; /* Center align stacked elements */
+    }
+
+    h1 {
+        font-size: 2rem; /* Adjust heading size */
+    }
+
+    .image-container, .cake-container, .video-container {
+        width: 100%; /* Ensure full-width on mobile */
+        margin-bottom: 20px; /* Add spacing between stacked elements */
+    }
+
+    .image {
+        width: 90%; /* Reduce width for better fit */
+        height: 250px; /* Adjust height for smaller screens */
+    }
+
+    .cake {
+        max-width: 90%; /* Scale down cake image */
+        max-height: 250px; /* Limit height */
+    }
+
+    .video-container video {
+        max-width: 90%; /* Ensure video fits smaller screens */
+        height: auto;
+    }
+}
